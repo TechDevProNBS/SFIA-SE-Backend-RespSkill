@@ -47,33 +47,5 @@ public class SkillLevelController {
 	}
 
 
-//	@RequestMapping("/create")
-//	public String create(@RequestBody IndividualProjectBlogs blog) {
-//
-//		IndividualProjectBlogs b = individualProjectBlogsService.create(blog);
-//		System.out.println("Hi");
-//		return b.toString();
-//	}
-//
-//	@RequestMapping("/insertComment")
-//	public String insertComment(@RequestParam String id, @RequestParam String comment, @RequestParam String username) {
-//		IndividualProjectBlogs b = individualProjectBlogsService.insertComment(id, comment, username);
-//		return b.toString();
-//
-//	}
-//
-//	@RequestMapping("/get")
-//	public Optional<IndividualProjectBlogs> getBlogs(@RequestParam String id) {
-//		return individualProjectBlogsService.getById(id);
-//	}
-//
-
-
-//	@RequestMapping("/delete/{id}")
-//	public String delete(@PathVariable String id) {
-//		individualProjectBlogsService.delete(id);
-//		return "Deleted " + id;
-//	}
-
 }
 
