@@ -40,7 +40,7 @@ pipeline {
            steps {
                 echo "production"
                 sh 'mvn package -DskipTests'
-                sh 'docker image build -t="shahe/sfia-skilllevel:latest" .'
+                sh 'docker image build --build-arg MY_ACTIVE_ENV="production" -t="shahe/sfia-skilllevel:latest" .'
                 sh 'docker push shahe/sfia-skilllevel:latest'
 
             }
