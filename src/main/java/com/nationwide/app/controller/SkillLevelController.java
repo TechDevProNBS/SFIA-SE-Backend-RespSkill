@@ -36,13 +36,11 @@ public class SkillLevelController {
 	
 	@RequestMapping("/API/SkillLevel/findIn")
 	public List<SkillLevel> findIn(@RequestParam List<String> skill_name){
-		System.out.println(skill_name);
 		return repo.findBySkillnameIn(skill_name);
 	}
 	
 	@RequestMapping("/API/SkillLevel/findBySkillName")
 	public List<SkillLevel> findBySkillName(@RequestParam String skill_name){
-		System.out.println(skill_name);
 		return repo.findBySkillname(skill_name);
 	}
 
