@@ -1,5 +1,16 @@
 FROM java:8-jdk-alpine
 
-COPY ./target/accessing-mongodb.jar /usr/app/
+ARG PORT_NAME
 
-ENTRYPOINT ["java","-jar","usr/app/accessing-mongodb.jar"]
+ARG PASSWORD
+
+COPY ./target/accessing-mongodb.jar  /usr/app/
+
+ENV SKILLLEVEL_PORT=$PORT_NAME
+
+ENV MONGODB_PASSWORD_SKILLLEVEL=$PASSWORD
+
+ENV PROFILE="testing"
+
+ENTRYPOINT java -jar -Dspring.profiles.active=$PROFILE usr/app/accessing-mongodb.jar
+
