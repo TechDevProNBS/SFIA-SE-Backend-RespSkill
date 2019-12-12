@@ -12,8 +12,8 @@ pipeline {
 		echo "Testing"
 		sh '. /home/manager/terraform-azure/ansible/ENV_VARIABLES.sh'
                 sh 'mvn package -DskipTests'
-                sh 'docker image build -t="10.0.5.4:5000/sfia-skilllevel:testing" .'
-                sh 'docker push 10.0.5.4:5000/sfia-skilllevel:testing'
+                sh 'docker image build -t="51.140.99.70:5000/sfia-skilllevel:testing" .'
+                sh 'docker push 51.140.99.70:5000/sfia-skilllevel:testing'
 		sh '/home/manager/terraform-azure/backEndUpdate.sh'
                 }
             }
@@ -29,9 +29,10 @@ pipeline {
 		echo "staging"
 		sh '. /home/manager/terraform-azure/ansible/ENV_VARIABLES.sh'
                 sh 'mvn package -DskipTests'
-                sh 'docker image build -t="10.0.5.4:5000/sfia-skilllevel:staging" .'
-                sh 'docker push 10.0.5.4:5000/sfia-skilllevel:staging'
+                sh 'docker image build -t="51.140.99.70:5000/sfia-skilllevel:staging" .'
+                sh 'docker push 51.140.99.70:5000/sfia-skilllevel:staging'
 		sh '/home/manager/terraform-azure/backEndUpdate.sh'
+                 
                 } 
             }
 
@@ -46,8 +47,8 @@ pipeline {
 		echo "production"
 		sh '. /home/manager/terraform-azure/ansible/ENV_VARIABLES.sh'
                 sh 'mvn package -DskipTests'
-                sh 'docker image build -t="10.0.5.4:5000/sfia-skilllevel:production" .'
-                sh 'docker push 10.0.5.4:5000/sfia-skilllevel:production'
+                sh 'docker image build -t="51.140.99.70:5000/sfia-skilllevel:production" .'
+                sh 'docker push 51.140.99.70:5000/sfia-skilllevel:production'
 		sh '/home/manager/terraform-azure/backEndUpdate.sh'
             }
         }
